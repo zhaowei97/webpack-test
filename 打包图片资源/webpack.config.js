@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-06 21:49:14
- * @LastEditTime: 2021-06-06 22:07:45
+ * @LastEditTime: 2021-06-07 00:01:24
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /webpack/webpack-test/打包图片资源/webpack.config.js
@@ -19,7 +19,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /.less$/,
+        test: /\.less$/,
         use: ["style-loader", "css-loader", "less-loader"],
       },
       {
