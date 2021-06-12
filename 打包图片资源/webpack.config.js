@@ -1,30 +1,30 @@
 /*
  * @Author: your name
  * @Date: 2021-06-06 21:49:14
- * @LastEditTime: 2021-06-08 01:15:24
+ * @LastEditTime: 2021-06-12 14:05:18
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /webpack/webpack-test/打包图片资源/webpack.config.js
  */
 
-const { resolve } = require("path");
-const htmlWebpackPlugin = require("html-webpack-plugin");
+const { resolve } = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    filename: "build.js",
-    path: resolve(__dirname, "build"),
+    filename: 'build.js',
+    path: resolve(__dirname, 'build'),
   },
   module: {
     rules: [
       {
         test: /\.less$/,
-        use: ["style-loader", "css-loader", "less-loader"],
+        use: ['style-loader', 'css-loader', 'less-loader'],
       },
       {
         test: /\.(jpg|png|gif|jpeg)$/,
-        loader: "url-loader",
+        loader: 'url-loader',
         options: {
           limit: 8 * 1024,
           esModule: false,
@@ -32,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.html$/,
-        loader: "html-loader",
+        loader: 'html-loader',
         options: {
           esModule: false,
         },
@@ -40,9 +40,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new htmlWebpackPlugin({
-      template: "./src/index.html",
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
     }),
   ],
-  mode: "development",
+  mode: 'development',
 };

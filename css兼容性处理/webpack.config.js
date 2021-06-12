@@ -1,22 +1,22 @@
 /*
  * @Author: your name
  * @Date: 2021-06-11 00:56:06
- * @LastEditTime: 2021-06-11 01:36:24
+ * @LastEditTime: 2021-06-12 14:05:01
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /webpack/webpack-test/拆分css文件/webpack.config.js
  */
 
-const { resolve } = require("path");
+const { resolve } = require('path');
 // const postcssPresetEnv = require("postcss-preset-env");
-const htmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    filename: "build.js",
-    path: resolve(__dirname, "build"),
+    filename: 'build.js',
+    path: resolve(__dirname, 'build'),
   },
   module: {
     rules: [
@@ -24,23 +24,23 @@ module.exports = {
         test: /\.css$/,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader"
+          'css-loader',
+          'postcss-loader',
         ],
       },
     ],
   },
   plugins: [
-    new htmlWebpackPlugin({
-      template: "./src/index.html",
+    new HtmlWebpackPlugin({
+      template: './src/index.html',
     }),
     new MiniCssExtractPlugin({
-      filename: "css/test.css",
+      filename: 'css/test.css',
     }),
   ],
-  mode: "development",
+  mode: 'development',
   devServer: {
-    contentBase: resolve(__dirname, "build"),
+    contentBase: resolve(__dirname, 'build'),
     compress: true,
     port: 3000,
     open: true,

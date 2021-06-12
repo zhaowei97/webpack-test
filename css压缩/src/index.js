@@ -6,4 +6,4 @@
  * @Description: In User Settings Edit
  * @FilePath: /webpack/webpack-test/拆分css文件/src/index.js
  */
-import './index.css';
+import "./index.css";

@@ -7,5 +7,4 @@
  * @FilePath: /webpack/webpack-test/打包图片资源/src/index.js
  */
 
-import "./index.less";
-
+import './index.less';
