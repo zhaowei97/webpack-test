@@ -1,7 +1,7 @@
 /*
  * @Author: your name
  * @Date: 2021-06-22 00:48:53
- * @LastEditTime: 2021-06-23 01:04:15
+ * @LastEditTime: 2021-06-24 00:11:16
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /webpack/webpack-test/项目webpack/loaders/webpack.config.js
@@ -15,9 +15,12 @@ module.exports = {
       {
         test: /\.js$/,
         use: [
-          { loader: 'loader1', options: { name: '1' } },
-          'loader2',
-          'loader3',
+          {
+            loader: 'babelLoader',
+            options: {
+              presets: ['@babel/preset-env'],
+            },
+          },
         ],
       },
     ],
